@@ -5,8 +5,8 @@ using UnityEngine.UI;           //importamos UnityEngine.UI para utilizar compon
 
 
 public class JuegoControlador3 : MonoBehaviour {
-
-    public float parallaxSpeed = 0.02f;
+    [Range(0f, 0.20f)]
+    public float parallaxSpeed = 0.08f;
     public RawImage fondo3;                             //definimos variables publicas para gestionar 
     public RawImage plataforma3;                       //tanto la velocidad del fondo como la plataforma y ademas para
 	// Use this for initialization                    // importar estos componentes y utilizarlos en este Script
@@ -18,6 +18,6 @@ public class JuegoControlador3 : MonoBehaviour {
 	void Update () {
         float finalSpeed = parallaxSpeed * Time.deltaTime;
         fondo3.uvRect = new Rect(fondo3.uvRect.x + finalSpeed,0f,1f,1f);
-        plataforma3.uvRect = new Rect(plataforma3.uvRect.x + finalSpeed*4, 0f, 1f, 1f);
+        plataforma3.uvRect = new Rect(plataforma3.uvRect.x + finalSpeed*12, 0f, 1f, 1f);
     }
 }
